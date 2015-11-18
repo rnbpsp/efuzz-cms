@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>efuzz</Name>
+    <ProjectGuid>{cea28035-aad3-46f5-93fa-f5d3f4526bd5}</ProjectGuid>
+    <RootNamespace>efuzz</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="login\design.php" />
+    <Compile Include="login\index.php" />
+    <Compile Include="login\index.php.old" />
+    <Compile Include="scripts\jquery-1.11.3.min.js" />
+    <Compile Include="scripts\jquery-1.php" />
+    <Compile Include="scripts\jquery-2.1.4.min.js" />
+    <Compile Include="scripts\jquery.ba-hashchange.min.js" />
+    <Compile Include="dbaccess.php" />
+    <Compile Include="efuzz.phpproj" />
+    <Compile Include="efuzz.sln" />
+    <Compile Include="index.php" />
+    <Compile Include="setup.php" />
+    <Compile Include="tools.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="login" />
+    <Folder Include="error\" />
+    <Folder Include="scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="error\config.php" />
+    <Content Include="error\error.php" />
+  </ItemGroup>
+</Project>

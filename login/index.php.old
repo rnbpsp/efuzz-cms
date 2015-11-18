@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>Efuzz Login</title>
+		<style>
+			body {
+				border: 0;
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.sel {
+				position: absolute;
+				top: 0;
+				height: 100%;
+				width: 50%;
+				
+				text-align: center;
+				font-size: 48px;
+				vertical-align: center;
+				
+			}
+			.sel > div
+			{
+				margin: 50% 0;
+				text-align: center;
+				font-size: 48px;
+				vertical-align: center;
+				font-decoration: none;
+			}
+			.sel:link, .sel:visited {
+				font-decoration: none;
+			}
+			
+			#teacher_sel {
+				left: 0;
+				background-color: #3F78F2;
+			}
+			
+			#student_sel {
+				position: absolute;
+				right: 0;
+				background-color: #F4C37C;
+			}
+		</style>
+		<script src="jquery-2.1.4.min.js"></script>
+		<script>
+			$()
+		</script>
+	</head>
+	<body>
+		<a href="#teach" id="teacher_sel" class="sel">
+			<div style="color:white">I am a<br>TEACHER</div>
+		</a>
+		<form id="teacher_login">
+		</form>
+		<a href="#learn" id="student_sel" class="sel">
+			<div>I am a<br>STUDENT</div>
+		</a>
+		<form id="student_login">
+		</form>
+	</body>
+</html>
