@@ -7,6 +7,13 @@
     <RootNamespace>efuzz</RootNamespace>
     <OutputType>Library</OutputType>
     <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+    <Server>PHPDev</Server>
+    <PublishEvent>None</PublishEvent>
+    <PHPDevAutoPort>True</PHPDevAutoPort>
+    <PHPDevPort>61171</PHPDevPort>
+    <PHPDevHostName>localhost</PHPDevHostName>
+    <IISProjectUrl>http://localhost:61171/</IISProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <IncludeDebugInformation>true</IncludeDebugInformation>
@@ -15,27 +22,72 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="login\design.php" />
-    <Compile Include="login\index.php" />
-    <Compile Include="login\index.php.old" />
+    <Compile Include="config\config.php">
+      <Publishable>False</Publishable>
+    </Compile>
+    <Compile Include="config\check_cost.php" />
+    <Compile Include="error\setup_session.php" />
+    <Compile Include="error\setup_write.php" />
+    <Compile Include="error\signup.php" />
+    <Compile Include="pages\dashboard\index.php" />
+    <Compile Include="pages\grades\design.php" />
+    <Compile Include="pages\login\design.php" />
+    <Compile Include="pages\login\index.php" />
+    <Compile Include="pages\login\index.php.old2" />
+    <Compile Include="pages\modules\modules.php" />
+    <Compile Include="pages\quizzes\add.php" />
+    <Compile Include="pages\quizzes\edit.php" />
+    <Compile Include="pages\quizzes\index.php" />
+    <Compile Include="pages\quizzes\add_json.php" />
+    <Compile Include="pages\quizzes\tags.php" />
+    <Compile Include="pages\quizzes\take.php" />
     <Compile Include="scripts\jquery-1.11.3.min.js" />
-    <Compile Include="scripts\jquery-1.php" />
     <Compile Include="scripts\jquery-2.1.4.min.js" />
     <Compile Include="scripts\jquery.ba-hashchange.min.js" />
-    <Compile Include="dbaccess.php" />
+    <Compile Include="dbaccess_mysqli.php" />
     <Compile Include="efuzz.phpproj" />
     <Compile Include="efuzz.sln" />
     <Compile Include="index.php" />
-    <Compile Include="setup.php" />
+    <Compile Include="config\setup.php" />
     <Compile Include="tools.php" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="login" />
     <Folder Include="error\" />
+    <Folder Include="config\" />
+    <Folder Include="pages\" />
+    <Folder Include="pages\login\" />
+    <Folder Include="pages\modules\" />
+    <Folder Include="pages\dashboard\" />
+    <Folder Include="pages\grades\" />
+    <Folder Include="pages\slides\" />
+    <Folder Include="pages\quizzes\" />
+    <Folder Include="pages\students\" />
     <Folder Include="scripts" />
+    <Folder Include="styles\" />
+    <Folder Include="styles\content\" />
+    <Folder Include="styles\content\login\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="error\config.php" />
-    <Content Include="error\error.php" />
+    <Compile Include="error\config.php" />
+    <Compile Include="error\error.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="scripts\login.js" />
+    <Content Include="pages\login\index.php.old" />
+    <Content Include="pages\modules\script.js" />
+    <Content Include="pages\quizzes\add.js" />
+    <Content Include="scripts\jquery-deparam.min.js" />
+    <Content Include="styles\content\bak2.png" />
+    <Content Include="styles\content\bkg.jpg" />
+    <Content Include="styles\content\blak bord.png" />
+    <Content Include="styles\content\efuzzfont.png" />
+    <Content Include="styles\content\login\bkg.jpg" />
+    <Content Include="styles\content\login\blak bord.png" />
+    <Content Include="styles\content\login\sky.png" />
+    <Content Include="styles\content\prof.png" />
+    <Content Include="styles\content\student.png" />
+    <Content Include="styles\content\students.png" />
+    <Content Include="styles\content\teacher.png" />
+    <Content Include="styles\login.css" />
   </ItemGroup>
 </Project>

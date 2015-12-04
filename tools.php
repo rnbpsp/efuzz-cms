@@ -4,9 +4,9 @@
 	{
 		$ret = array();
 		$i = 0;
-		for (; $i < $vars.length; i++)
+		for (; $i < $vars.length; $i++)
 		{
-			$var = $vars[i];
+			$var = $vars[$i];
 			$ret[$i] = false;
 			if (empty($_POST[$var]))
 			{

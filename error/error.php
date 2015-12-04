@@ -13,3 +13,7 @@
 
 </body>
 </html>
+<?php 
+    // all errors die()
+    die();
+?>

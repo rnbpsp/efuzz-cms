@@ -44,8 +44,10 @@ $_SESSION['page'] = 'login';
                     $teach_pass_err = "Type password";
                 else if ( $password == $_POST['pass'])
                 {
-                    require 'admin.php';
-                    die();
+                    //require 'admin.php';
+                    //die();
+                    $page = 'dashboard';
+                    return;
                 }
                 else {
                     $teach_pass_err = 'Wrong Password';
@@ -93,8 +95,10 @@ $_SESSION['page'] = 'login';
                                     foreach ($row as $val)
                                         if ($val == $_POST['pass']) {
                                             echo $val;
-                                            header("Location: modules.php");
-                                            die();
+                                            //header("Location: modules.php");
+                                            //die();
+                                            $page = 'dashboard';
+                                            return;
                                         }
                                 }
                         }
@@ -105,11 +109,11 @@ $_SESSION['page'] = 'login';
                 break;
             case 'signup':
                 $required_fields = array('fname','lname','uname','pass','pass2');
-                if ( !require_input($required_fields) )
+                /*if ( !require_input($required_fields) )
                 {
                     require 'error/undefined.html';
                     die();
-                }
+                }*/
                 if (empty($_POST['gender']))
                 {
                     $sign_gender_err = 'Gender required';
@@ -121,8 +125,9 @@ $_SESSION['page'] = 'login';
                         case 'female':
                             break;
                         default:
-                            require 'error/undefined.html';
-                            die();
+                            //require 'error/undefined.html';
+                            //die();
+                            $sign_gender_err = 'Something went wrong, select again';
                     }
                 $fret = require_filled('fname', 2, 256);
                 $lret = require_filled('lname', 2, 256);
@@ -142,7 +147,7 @@ $_SESSION['page'] = 'login';
                 else if ( !preg_match('/[A-Za-z]/', $_POST['pass']) ||
                         !preg_match('/[^A-Za-z0-9]/', $_POST['pass']) ||
                         !preg_match('/[0-9]/', $_POST['pass']) )
-                    $sign_pass_err = 'Password should contain atleast a letter, a number and s special character';
+                    $sign_pass_err = 'Password should contain atleast a letter, a number and a special character';
                 else if ( empty($_POST['pass2']) )
                     $sign_pass_err = 'Retype password';
                 else if ($_POST['pass'] != $_POST['pass2'])
@@ -167,7 +172,8 @@ $_SESSION['page'] = 'login';
                     $uname=$_POST['uname'];
                     $pass=$_POST['pass'];
                     $gender=$_POST['gender'];
-                    $encrypted_pass=md5($pass);
+                    //$encrypted_pass=md5($pass);
+                    $encrypted_pass = password_hash($pass, PASSWORD_DEFAULT);
                     $sql = "INSERT INTO stud_data (fname, lname, uname, pass, gender)
 						    VALUES ('$fname', '$lname', '$uname', '$encrypted_pass', '$gender')";
                     if ($conn->query($sql) === TRUE)
@@ -177,7 +183,7 @@ $_SESSION['page'] = 'login';
                 }
                 break;
             default:
-                require 'error/undefined.html';
+                require 'error/login.php';
                 die();
         }
     }
